@@ -12,11 +12,12 @@ wordNumbers = []
 
 for i in range(len(words)):
   for j in range(i-1):
-    j = j + 1
+    
     print("i: ", i, "J: ", j)
     if words[j] == words[i]:
       wordNumbers.append(j)
       print("Repeat: ", words[i])
+  j = j + 1
     
   wordNumbers.append(i)
   print("::::::", i)
