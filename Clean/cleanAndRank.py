@@ -17,7 +17,6 @@ print(text)
 print(wordArr)  
 
 
-SentenceArr = text.split(".")
 
 wordsByPopularity = [[],[]]
 for i in range(len(wordArr)):
@@ -41,7 +40,6 @@ print("Sorted", wordsByPopularity[1].sort())
 
 print("Text", text, "\n")
 print("Word", wordArr, "\n")
-print("Sen", SentenceArr, "\n")
 print("WordRank", wordsByPopularity, "\n")
 
 
