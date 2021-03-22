@@ -1,29 +1,26 @@
-#credit: https://machinelearningmastery.com/develop-word-embeddings-python-gensim/
-
 from gensim.models import Word2Vec
-sentences = [['this', 'is', 'the', 'first', 'sentence', 'for', 'word2vec'],
-	['this', 'is', 'the', 'second', 'sentence'],
-	['yet', 'another', 'sentence'],
-	['one', 'more', 'sentence'],
-	['and', 'the', 'final', 'sentence']]
+import numpy as np
+
+sentences = [['this', 'is', 'a', 'sentence', 'about', 'school'],
+			['school', 'has', 'students', 'and', 'teachers'],
+			['teachers', 'teach', 'the', 'students'],
+			['the', 'students', 'learn'],
+			['the', 'teachers', 'make', 'money']]
 
 model = Word2Vec(sentences, min_count=1)
 
-print(model)
+first = model['students']
+target =  model['learn']
+second = model['teachers']
 
-words = list(model.wv.vocab)
-print(words)
-
-print("sentence:", model['sentence'])
-
-model.save('model.bin')
-
-new_model = Word2Vec.load('model.bin')
-print(new_model)
+print("First: ", np.linalg.norm(target - first))
+print("Second: ", np.linalg.norm(target - second))
 
 
 
 
+
+#3rd parties's lab:
 """
 
 from gensim.models import Word2Vec
